@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Canvas Vision Assistant",
+    "version": "1.0",
+    "description": "Analyze Canvas content using OpenAI's Vision API",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      }
+    },
+    "permissions": [
+      "activeTab",
+      "storage",
+      "scripting",
+      "tabs"
+    ],
+    "host_permissions": [
+      "*://*.instructure.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "web_accessible_resources": [
+      {
+        "resources": ["screenshotCrop.html", "chat.html", "icons/*"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+  }

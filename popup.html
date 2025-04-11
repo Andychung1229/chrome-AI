@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Vision Assistant</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with logo -->
+        <header>
+            <div class="logo">
+                <img src="icons/icon48.png" alt="Canvas Vision Assistant">
+                <h1>Canvas Vision Assistant</h1>
+            </div>
+            <button id="settingsToggle" class="icon-button" title="Settings">⚙️</button>
+        </header>
+
+        <!-- Settings panel (hidden by default) -->
+        <div id="settingsPanel" class="hidden">
+            <h2>Settings</h2>
+            <div class="setting-group">
+                <label for="apiKey">OpenAI API Key:</label>
+                <div class="api-key-container">
+                    <input type="password" id="apiKey" placeholder="Enter your OpenAI API key">
+                    <button id="toggleApiVisibility" class="icon-button" title="Show/Hide API Key">👁️</button>
+                </div>
+                <small>Your API key is stored locally and only used to access OpenAI services.</small>
+            </div>
+            <div class="setting-actions">
+                <button id="saveSettings" class="primary-button">Save Settings</button>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="content">
+            <div id="welcomeScreen">
+                <h2>Ask AI about Canvas content</h2>
+                <p>Capture a region of your screen to analyze with OpenAI Vision.</p>
+                <div class="capture-button-container">
+                    <button id="captureButton" class="capture-button" title="Capture Screen Region">
+                        <span class="capture-icon">📷</span>
+                    </button>
+                </div>
+                <p class="hint">Click the button to select a region of your screen</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <small>Works best on Canvas pages. API key required in settings.</small>
+        </footer>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

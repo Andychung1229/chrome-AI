@@ -1,0 +1,252 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    width: 320px;
+    min-height: 350px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background-color: #e53935; /* Canvas-like red color */
+    color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 24px;
+    height: 24px;
+}
+
+.logo h1 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Button Styles */
+.icon-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.icon-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.primary-button {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.primary-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Settings Panel */
+#settingsPanel {
+    background-color: white;
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+#settingsPanel h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.setting-group {
+    margin-bottom: 16px;
+}
+
+.setting-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #555;
+}
+
+.api-key-container {
+    display: flex;
+    gap: 8px;
+}
+
+input[type="text"],
+input[type="password"] {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.setting-group small {
+    display: block;
+    margin-top: 4px;
+    color: #777;
+    font-size: 12px;
+}
+
+.setting-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Content Area */
+.content {
+    flex: 1;
+    padding: 20px 16px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#welcomeScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+#welcomeScreen h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#welcomeScreen p {
+    color: #666;
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.capture-button-container {
+    margin: 10px 0 20px;
+}
+
+.capture-button {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #e53935;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(229, 57, 53, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.capture-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(229, 57, 53, 0.4);
+}
+
+.capture-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(229, 57, 53, 0.3);
+}
+
+.capture-icon {
+    font-size: 28px;
+    color: white;
+}
+
+.hint {
+    font-size: 13px;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    padding: 10px 16px;
+    text-align: center;
+    background-color: #f8f8f8;
+    border-top: 1px solid #eee;
+    color: #888;
+    font-size: 12px;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+}
+
+.notification.success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.notification.error {
+    background-color: #f44336;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; bottom: 0; }
+    to { opacity: 1; bottom: 16px; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; bottom: 16px; }
+    to { opacity: 0; bottom: 0; }
+}

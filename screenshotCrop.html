@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Region to Analyze</title>
+    <link rel="stylesheet" href="screenshotCrop.css">
+</head>
+<body>
+    <!-- Overlay element that covers the entire viewport -->
+    <div id="overlay">
+        <!-- Selection area that the user will drag to create -->
+        <div id="selection" class="hidden">
+            <!-- Selection handles for resizing -->
+            <div class="handle top-left" data-handle="top-left"></div>
+            <div class="handle top-right" data-handle="top-right"></div>
+            <div class="handle bottom-left" data-handle="bottom-left"></div>
+            <div class="handle bottom-right" data-handle="bottom-right"></div>
+            
+            <!-- Info box showing dimensions -->
+            <div id="selectionInfo"></div>
+        </div>
+        
+        <!-- Instructions overlay -->
+        <div id="instructions">
+            <p>Click and drag to select a region</p>
+            <p class="shortcut">Press <kbd>Esc</kbd> to cancel</p>
+        </div>
+        
+        <!-- Capture actions (shown after selection) -->
+        <div id="captureActions" class="hidden">
+            <button id="captureButton" class="action-button">
+                <span class="icon">✓</span>
+                <span class="label">Capture</span>
+            </button>
+            <button id="cancelButton" class="action-button secondary">
+                <span class="icon">✗</span>
+                <span class="label">Cancel</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- This is where the screenshot will be temporarily stored -->
+    <canvas id="screenshotCanvas" class="hidden"></canvas>
+    
+    <script src="utils.js"></script>
+    <script src="screenshotCrop.js"></script>
+</body>
+</html>

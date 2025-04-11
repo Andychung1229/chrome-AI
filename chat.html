@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Vision Assistant</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="icons/icon48.png" alt="Canvas Vision Assistant">
+                <h1>Canvas Vision Assistant</h1>
+            </div>
+            <div class="header-actions">
+                <button id="newCaptureBtn" class="header-button" title="New Screenshot">
+                    <span>📷 New</span>
+                </button>
+                <button id="clearChatBtn" class="header-button" title="Clear Chat">
+                    <span>🧹 Clear</span>
+                </button>
+                <button id="settingsBtn" class="header-button" title="Settings">
+                    <span>⚙️</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Settings Panel (initially hidden) -->
+        <div id="settingsPanel" class="hidden">
+            <div class="settings-content">
+                <h2>Settings</h2>
+                <div class="setting-group">
+                    <label for="apiKey">OpenAI API Key:</label>
+                    <div class="api-key-container">
+                        <input type="password" id="apiKey" placeholder="Enter your OpenAI API key">
+                        <button id="toggleApiVisibility" class="icon-button" title="Show/Hide API Key">👁️</button>
+                    </div>
+                    <small>Your API key is stored locally and only used for API requests.</small>
+                </div>
+                <div class="setting-group">
+                    <label for="modelSelect">AI Model:</label>
+                    <select id="modelSelect">
+                        <option value="gpt-4-vision-preview">GPT-4 Vision</option>
+                    </select>
+                    <small>Choose the AI model to use for analyzing screenshots.</small>
+                </div>
+                <div class="setting-actions">
+                    <button id="saveSettingsBtn" class="primary-button">Save</button>
+                    <button id="closeSettingsBtn" class="secondary-button">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-container">
+            <!-- Messages will appear here -->
+            <div id="chatMessages" class="chat-messages">
+                <div class="welcome-screen">
+                    <h2>Analyze your Canvas screenshot</h2>
+                    <p>Ask a question about the screenshot you captured</p>
+                </div>
+            </div>
+            
+            <!-- Input area -->
+            <div class="chat-input-container">
+                <textarea id="userInput" placeholder="Ask about your Canvas screenshot..." rows="1"></textarea>
+                <button id="sendBtn" class="send-button" title="Send Message">
+                    <span>↑</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>
